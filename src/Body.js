@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { swiggy_api_URL } from "./constants";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -28,9 +29,7 @@ const Body = () => {
   }, []);
 
   async function getRestaurant() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.7131695&lng=76.5650829&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(swiggy_api_URL);
     // https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.7131695&lng=76.5650829&page_type=DESKTOP_WEB_LISTING
 
     const json = await data.json();
