@@ -1,0 +1,146 @@
+body {
+    background: #070707;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    margin: 5px;
+    padding: 5px;
+    width: 70px;
+
+
+}
+
+
+.header {
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 1%;
+
+
+
+
+
+}
+
+.nav-item>ul {
+    list-style-type: none;
+    display: flex;
+
+
+
+}
+
+.nav-item>ul>li {
+    padding: 10px;
+    color: rgb(50, 225, 225);
+}
+
+input {
+
+    margin: 10px;
+    margin-top: 10px;
+}
+
+.card {
+
+
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(230, 180, 158);
+    color: rgb(231, 243, 243);
+    border: 2px solid black;
+    border-radius: 5%;
+    background: linear-gradient(102.7deg, rgb(253, 218, 255) 8.2%, rgb(223, 173, 252) 19.6%, rgb(173, 205, 252) 36.8%, rgb(173, 252, 244) 73.2%, rgb(202, 248, 208) 90.9%);
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.flex {
+
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    gap: 20px;
+
+}
+
+.card>img {
+
+    width: 200px;
+    border-radius: 5%;
+    border: 1px solid rgb(37, 36, 65);
+
+}
+
+.h {
+
+    color: antiquewhite;
+}
+
+
+.btn {
+    width: 100px;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.shimmer {
+    width: 200px;
+    height: 300px;
+    background-color: gray;
+    border-radius: 5px;
+    margin: 20px;
+
+}
+
+.shimmer-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    row-gap: 20px;
+    gap: 20px;
+}
+
+.about {
+    color: azure;
+}
+
+.contact {
+    color: azure;
+}
+
+.menu1 {
+    display: flex;
+    background-color: rgb(13, 13, 13);
+    color: azure;
+
+
+}
+
+.menu1>img {
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    color: azure;
+}
