@@ -12,6 +12,9 @@ export const swiggy_menu_api_URL =
 export const shimmer_card_unit = 8;
 
 
+export const Github_API_User = "https://api.github.com/users/Pavan-Malviya";
+
+
 export const restaurantList = [
   {
     type: "restaurant",
