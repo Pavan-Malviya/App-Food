@@ -4,22 +4,24 @@ const Header = () => {
   const [islogedin, setIsLogedIn] = useState(true);
 
   return (
-    <div className="header">
-      <img
+    <div className="bg-black text-white flex justify-between shadow-md sticky top-0"  >
+
+      <img className="w-16 p-2 m-2"
         src="https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-food-logo-png-image_6089719.png"
-        className="logo"
+
       ></img>
+
       <h1 className="title"></h1>
 
       <div className="nav-item">
-        <ul>
-          <li><Link to="/" style={{ textDecoration: 'none', color: 'aqua' }} >Home</Link></li>
-          <li><Link to="/About" style={{ textDecoration: 'none', color: 'aqua' }} >About us </Link></li>
-          <li><Link to="/Contact" style={{ textDecoration: 'none', color: 'aqua' }} >Contact</Link></li>
-          <li>Cart</li>
+        <ul className="flex p-3 m-3" >
+          <li className="pl-2"><Link to="/"  >Home</Link></li>
+          <li className="pl-2" ><Link to="/About">About us </Link></li>
+          <li className="pl-2"><Link to="/Contact">Contact</Link></li>
+          <li className="pl-2">Cart</li>
         </ul>
       </div>
-      <div className="btn">
+      <div className="p-3 m-3">
         {islogedin ? (
           <button onClick={() => setIsLogedIn(false)}>Login</button>
         ) : (

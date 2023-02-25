@@ -57,8 +57,8 @@ const Body = () => {
   // if (!allRestaurants) return null;
 
   return (
-    <div>
-      <div className="in-sea">
+    <div className="">
+      <div className="p-2 m-2 w-4 flex ">
         <input
           type="text"
           placeholder="search"
@@ -85,7 +85,7 @@ const Body = () => {
       {allRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="flex">
+        <div className="flex flex-wrap justify-center">
           {filterRestaurants.map((restaurant) => {
             return <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} style={{ textDecoration: "none" }}> <Card {...restaurant.data} /></Link>;
           })}
@@ -103,8 +103,8 @@ const Card = ({
   slaString,
 }) => {
   return (
-    <div className="card">
-      <img src={IMG_CDN_URL + cloudinaryImageId}></img>
+    <div className=" p-2 m-2 md:h-full md:w-48">
+      <img className="w-52" src={IMG_CDN_URL + cloudinaryImageId}></img>
       <h3>{name}</h3>
       <h5>{locality}</h5>
       <h5>{slaString}</h5>
