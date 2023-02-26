@@ -19,9 +19,11 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <img src={profile.avatar_url} alt="" style={{ width: "200px", borderRadius: "20%" }} />
-            <h1>{profile.name}</h1>
+        <div className="flex justify-center">
+            <div className="">
+                <img className="m-4" src={profile.avatar_url} alt="" style={{ width: "200px", borderRadius: "20%" }} />
+                <h1 className="m-4 pl-2 font-bold">{profile.name}</h1>
+            </div>
         </div>
 
 

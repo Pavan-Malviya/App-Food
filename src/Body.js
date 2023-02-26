@@ -57,9 +57,10 @@ const Body = () => {
   // if (!allRestaurants) return null;
 
   return (
-    <div className="">
-      <div className="p-2 m-2 w-4 flex ">
+    <div className="p-4 m-4  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <div className="flex justify-center gap-2">
         <input
+          className="rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 text-white border-none"
           type="text"
           placeholder="search"
           value={searchText}
@@ -68,6 +69,7 @@ const Body = () => {
           }}
         ></input>
         <button
+          className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500  rounded-full p-1 text-white "
           onClick={() => {
             //need to filter the data
             //here filterData took variable (searchText, restaurants)
@@ -85,7 +87,7 @@ const Body = () => {
       {allRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex justify-center flex-wrap w-full p-4 m-1">
           {filterRestaurants.map((restaurant) => {
             return <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} style={{ textDecoration: "none" }}> <Card {...restaurant.data} /></Link>;
           })}
@@ -103,9 +105,9 @@ const Card = ({
   slaString,
 }) => {
   return (
-    <div className=" p-2 m-2 md:h-full md:w-48">
-      <img className="w-52" src={IMG_CDN_URL + cloudinaryImageId}></img>
-      <h3>{name}</h3>
+    <div className="border-1 shadow-2xl border-white rounded-md p-4 m-4 bg-gradient-to-r from-teal-200 to-teal-500 text-gray-800">
+      <img className="w-56 h-40 rounded-md " src={IMG_CDN_URL + cloudinaryImageId}></img>
+      <h3 className="font-semibold py-2">{name}</h3>
       <h5>{locality}</h5>
       <h5>{slaString}</h5>
     </div>
