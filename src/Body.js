@@ -57,7 +57,8 @@ const Body = () => {
   // if (!allRestaurants) return null;
 
   return (
-    <div className="p-4 m-4  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div className="p-4 m-4">
+
       <div className="flex justify-center gap-2">
         <input
           className="rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 text-white border-none"
@@ -105,13 +106,19 @@ const Card = ({
   slaString,
 }) => {
   return (
-    <div className="border-1 shadow-2xl border-white rounded-md p-4 m-4 bg-gradient-to-r from-teal-200 to-teal-500 text-gray-800">
-      <img className="w-56 h-40 rounded-md " src={IMG_CDN_URL + cloudinaryImageId}></img>
-      <h3 className="font-semibold py-2">{name}</h3>
-      <h5>{locality}</h5>
-      <h5>{slaString}</h5>
+
+    <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-900 dark:text-gray-50">
+      <img src={IMG_CDN_URL + cloudinaryImageId} alt="" className="object-cover object-center w-full rounded-md h-60 dark:bg-gray-500" />
+      <div className="mt-6 mb-2">
+        <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-400">{locality}</span>
+        <h2 className="text-xl font-semibold tracking-wide">{name}</h2>
+      </div>
+      <p className="dark:text-gray-100">{slaString} </p>
     </div>
+
   );
+
+
 };
 
 export default Body;
