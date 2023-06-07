@@ -34,8 +34,8 @@ const Body = () => {
 
     const json = await data.json();
     console.log(json);
-    setAllRestaurants(json.data?.cards[2]?.data?.data?.cards);
-    setFilterRestaurants(json.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json.data?.cards[0]?.data?.data?.cards);
+    setFilterRestaurants(json.data?.cards[0]?.data?.data?.cards);
   }
 
   // use searchData function and set condition if data is empty show error message
