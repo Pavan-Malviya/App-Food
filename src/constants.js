@@ -8,7 +8,7 @@ export const swiggy_api_URL =
 
 // Swiggy API to get Restaurant Menu data with corsanywhere
 export const swiggy_menu_api_URL =
-  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=20.7131695&lng=76.5650829&menuId=";
+ "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
 
 export const shimmer_card_unit = 8;
 
