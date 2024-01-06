@@ -3,11 +3,11 @@ export const IMG_CDN_URL =
 
 // Swiggy API to get Restaurant data with corsanywhere;
 export const swiggy_api_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.7131695&lng=76.5650829&page_type=DESKTOP_WEB_LISTING";
+  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D20.7131695%26lng%3D76.5650829%26page_type%3DDESKTOP_WEB_LISTING";
 
 // Swiggy API to get Restaurant Menu data with corsanywhere
 export const swiggy_menu_api_URL =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
+  "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D21.1702401%26lng%3D72.83106070000001%26%26submitAction%3DENTER%26restaurantId%3D";
 
 export const shimmer_card_unit = 8;
 

@@ -15,7 +15,7 @@ const Body = () => {
   async function getRestaurant() {
     try {
       const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.7131695&lng=76.5650829&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D20.7131695%26lng%3D76.5650829%26page_type%3DDESKTOP_WEB_LISTING"
       );
       if (!response.ok) {
         throw new Error(
