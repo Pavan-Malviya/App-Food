@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { IMG_CDN_URL } from "./constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { swiggy_api_URL } from "./constants";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
-  const [filterRestaurants, setFilterRestaurants] = useState([]);
+  const [filterRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -14,34 +15,32 @@ const Body = () => {
 
   async function getRestaurant() {
     try {
-      const response = await fetch(
-        "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D20.7131695%26lng%3D76.5650829%26page_type%3DDESKTOP_WEB_LISTING"
-      );
-      if (!response.ok) {
-        throw new Error(
-          `Failed to fetch: ${response.status} ${response.statusText}`
-        );
+      const response = await fetch(swiggy_api_URL);
+      const json = await response.json();
+
+      // initialize checkJsonData() function to check Swiggy Restaurant data
+      async function checkJsonData(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+          // initialize checkData for Swiggy Restaurant data
+          let checkData =
+            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
+
+          // if checkData is not undefined then return it
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
       }
 
-      const data = await response.json();
-      console.log(data);
-      const cardsData =
-        data?.data?.cards[1]?.card?.card.gridElements.infoWithStyle.restaurants;
-      console.log("cards data", cardsData);
-      if (cardsData) {
-        // Set allRestaurants to the first 12 cards in the array
-        setAllRestaurants(cardsData.slice(0, 12));
-
-        // Set filterRestaurants to the entire cards array
-        setFilterRestaurants(cardsData.slice(0, 12));
-
-        // Now you can use allRestaurants and filterRestaurants as per your requirements
-      }
-      // setAllRestaurants(data?.data?.cards[0]?.data?.data?.cards);
-      // setFilterRestaurants(data?.data?.cards[0]?.data?.data?.cards);
-      console.log(data);
+      // call the checkJsonData() function which return Swiggy Restaurant data
+      const resData = await checkJsonData(json);
+      console.log(resData);
+      // update the state variable restaurants with Swiggy API data
+      setAllRestaurants(resData);
+      setFilteredRestaurants(resData);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 
@@ -49,7 +48,7 @@ const Body = () => {
     <div className="p-4 m-4">
       <div className="flex justify-center gap-2">
         <input
-          className="rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-4 text-white border-none"
+          className="shadow appearance-none border rounded w-25 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text"
           placeholder="search"
           value={searchText}
@@ -58,14 +57,14 @@ const Body = () => {
           }}
         />
         <button
-          className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-full p-1 text-white"
+          className="bg-black hover:bg-white text-white hover:text-black border hover:border-black font-bold py-2 px-4 rounded"
           onClick={() => {
             const filteredData = allRestaurants.filter((restaurant) =>
               restaurant?.info?.name
                 ?.toLowerCase()
                 ?.includes(searchText.toLowerCase())
             );
-            setFilterRestaurants(filteredData);
+            setFilteredRestaurants(filteredData);
           }}
         >
           Search
