@@ -14,14 +14,14 @@ const Header = () => {
             alt="Logo"
           />
         </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900" href="/">
+        <nav className="md:ml-auto md:mr-auto flex gap-2 text-base">
+          <a className=" hover:text-gray-900" href="/">
             Home
           </a>
-          <a className="mr-5 hover:text-gray-900" href="/About">
+          <a className=" hover:text-gray-900" href="/About">
             About Us
           </a>
-          <a className="mr-5 hover:text-gray-900" href="/Contact">
+          <a className=" hover:text-gray-900" href="/Contact">
             Contact
           </a>
         </nav>
