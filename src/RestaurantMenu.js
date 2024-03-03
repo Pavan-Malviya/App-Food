@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  IMG_CDN_URL,
-  MENU_ITEM_TYPE_KEY,
-  RESTAURANT_TYPE_KEY,
-} from "./constants";
+import { IMG_CDN_URL } from "./constants";
 import Shimmer from "./Shimmer";
 import { swiggy_menu_api_URL } from "./constants";
-import useResMenuData from "./hooks/ResMenu";
 
 const RestaurantMenu = () => {
   const params = useParams();
