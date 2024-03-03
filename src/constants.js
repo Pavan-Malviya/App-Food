@@ -9,6 +9,10 @@ export const swiggy_api_URL =
 export const swiggy_menu_api_URL =
   "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D21.1702401%26lng%3D72.83106070000001%26%26submitAction%3DENTER%26restaurantId%3D";
 
+export const MENU_ITEM_TYPE_KEY =
+  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+export const RESTAURANT_TYPE_KEY =
+  "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
 export const shimmer_card_unit = 8;
 
 export const Github_API_User = "https://api.github.com/users/Pavan-Malviya";
