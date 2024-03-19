@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "./constants";
 import Shimmer from "./Shimmer";
 import { swiggy_menu_api_URL } from "./constants";
+import Cart from "./Cart";
 
 const RestaurantMenu = () => {
   const params = useParams();
   const { id } = params;
 
   const [restaurantMenu, setRestaurantMenu] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     getRestaurantInfo();
@@ -17,7 +19,9 @@ const RestaurantMenu = () => {
   async function getRestaurantInfo() {
     const response = await fetch(swiggy_menu_api_URL + id);
     const restaurantData = await response.json();
+
     console.log(restaurantData);
+
     // setRestaurantMenu(restaurantData?.data.cards[2]?.card?.card);
     // console.log(restaurantData?.data.cards[2]?.card?.card);
 
@@ -32,13 +36,21 @@ const RestaurantMenu = () => {
         }
       }
     }
-
     // call the checkJsonData() function which return Swiggy Restaurant data
     const resData = await checkJsonData(restaurantData);
     console.log(resData);
     // update the state variable restaurants with Swiggy API data
     setRestaurantMenu(resData);
   }
+
+  const addToCart = () => {
+    // Ensure that restaurantMenu is not null before adding to the cart
+    if (restaurantMenu) {
+      setCartItems([...cartItems, restaurantMenu]);
+      console.log(cartItems);
+      return <Cart cartItems={cartItems} />;
+    }
+  };
 
   return !restaurantMenu ? (
     <Shimmer />
@@ -77,6 +89,13 @@ const RestaurantMenu = () => {
               </li>
             ))}
           </ul>
+          <button
+            className="bg-slate-400 border p-2 text-white rounded "
+            onClick={addToCart}
+          >
+            Add To Cart
+          </button>
+          <Cart cartItems={cartItems} />
         </div>
       </div>
     </div>

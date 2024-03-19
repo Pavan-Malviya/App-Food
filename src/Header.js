@@ -6,30 +6,33 @@ const Header = () => {
 
   return (
     <header className="text-gray-600 body-font">
-      <div className="container shadow-sm mx-auto flex  md:flex-row items-center p-2">
-        <a className="w-[50px] mr-5">
+      <div className="container mx-auto flex items-center justify-between p-4">
+        <Link to="/" className="w-12">
           <img
-            className="" // Full width on small screens, auto on larger
+            className="w-full" // Full width on small screens, auto on larger
             src="https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-food-logo-png-image_6089719.png"
             alt="Logo"
           />
-        </a>
-        <nav className="md:ml-auto md:mr-auto flex gap-2 text-base">
-          <a className=" hover:text-gray-900" href="/">
+        </Link>
+        <nav className="flex gap-4 text-base">
+          <Link to="/" className="hover:text-gray-900">
             Home
-          </a>
-          <a className=" hover:text-gray-900" href="/About">
+          </Link>
+          <Link to="/about" className="hover:text-gray-900">
             About Us
-          </a>
-          <a className=" hover:text-gray-900" href="/Contact">
+          </Link>
+          <Link to="/contact" className="hover:text-gray-900">
             Contact
-          </a>
+          </Link>
+          <Link to="/cart" className="hover:text-gray-900">
+            Cart
+          </Link>
         </nav>
-        <div className="p-1 ml-5">
+        <div className="ml-4">
           {isLoggedIn ? (
-            <button onClick={() => setIsLoggedIn(false)}>Login</button>
+            <button onClick={() => setIsLoggedIn(false)}>Logout</button>
           ) : (
-            <button onClick={() => setIsLoggedIn(true)}>Logout</button>
+            <button onClick={() => setIsLoggedIn(true)}>Login</button>
           )}
         </div>
       </div>

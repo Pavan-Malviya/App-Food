@@ -9,7 +9,7 @@ import About from "./About";
 import Error from "./Error";
 import Contact from "./Contact";
 import RestaurantMenu from "./RestaurantMenu";
-
+import Cart from "./Cart";
 
 const AppLayout = () => {
   return (
@@ -44,13 +44,13 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
-
-    ]
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
   },
-
-
 ]);
-
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
