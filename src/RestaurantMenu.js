@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
   const params = useParams();
   const { id } = params;
 
-  const [restaurantMenu, setRestaurantMenu] = useState(null);
+  const [restaurantMenu, setRestaurantMenu] = useState();
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
